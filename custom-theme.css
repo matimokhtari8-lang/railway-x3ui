@@ -1,0 +1,153 @@
+/* ===================================================================
+   تم بنفش-مشکی برای پنل 3x-ui
+   این فایل از طریق nginx به صفحه‌ی پنل تزریق می‌شه (بدون نیاز به بیلد
+   دوباره‌ی فرانت‌اند). چون پنل از باینری آماده اجرا می‌شه و کلاس‌های
+   دقیق Ant Design Vue ممکنه بین نسخه‌ها کمی فرق کنه، اگر جایی رنگ
+   قبلی مونده باقی موند، با Inspect Element (F12) اسم کلاس همون بخش
+   رو پیدا کن و به همین فایل اضافه کن.
+   =================================================================== */
+
+:root {
+  --primary-color: #7c3aed;      /* بنفش اصلی */
+  --primary-hover: #9333ea;
+  --primary-dark: #4c1d95;
+  --bg-black: #0b0714;
+  --bg-panel: #150f24;
+  --bg-card: #1c1330;
+  --border-purple: #3b2166;
+  --text-light: #ece6ff;
+}
+
+html, body, #app {
+  background-color: var(--bg-black) !important;
+  color: var(--text-light) !important;
+}
+
+/* ---- سایدبار / منوی کناری ---- */
+.ant-layout-sider,
+.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+aside, nav {
+  background: linear-gradient(180deg, #0b0714 0%, #1c1330 100%) !important;
+  border-right: 1px solid var(--border-purple) !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-item-selected {
+  background-color: var(--primary-dark) !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-item:hover {
+  background-color: rgba(124, 58, 237, 0.25) !important;
+  color: #fff !important;
+}
+
+/* ---- هدر بالای صفحه ---- */
+.ant-layout-header,
+header {
+  background: linear-gradient(90deg, #1c1330 0%, #0b0714 100%) !important;
+  border-bottom: 1px solid var(--border-purple) !important;
+  color: var(--text-light) !important;
+}
+
+/* ---- کارت‌ها / پنل‌های محتوا ---- */
+.ant-layout-content,
+.ant-card,
+.card,
+.ant-table,
+.ant-table-container,
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td,
+.ant-modal-content,
+.ant-drawer-content {
+  background-color: var(--bg-card) !important;
+  color: var(--text-light) !important;
+  border-color: var(--border-purple) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: rgba(124, 58, 237, 0.15) !important;
+}
+
+/* ---- دکمه‌ها ---- */
+.ant-btn-primary,
+button[type="primary"],
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+.ant-btn-primary:hover,
+button[type="primary"]:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+.ant-btn-dangerous {
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+/* ---- سوییچ‌ها، چک‌باکس، تگ‌ها، بج‌ها ---- */
+.ant-switch-checked,
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.ant-tag,
+.badge {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
+}
+
+/* ---- اینپوت‌ها ---- */
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+input, select, textarea {
+  background-color: #120a1f !important;
+  border-color: var(--border-purple) !important;
+  color: var(--text-light) !important;
+}
+
+.ant-input:focus,
+.ant-input-affix-wrapper-focused,
+.ant-select-focused .ant-select-selector {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* ---- نمودارها / کارت‌های وضعیت داشبورد ---- */
+.status-card,
+.dashboard-card {
+  background: linear-gradient(135deg, #1c1330 0%, #0b0714 100%) !important;
+  border: 1px solid var(--border-purple) !important;
+}
+
+/* ---- لینک‌ها ---- */
+a {
+  color: #b794f6 !important;
+}
+a:hover {
+  color: #d6bcfa !important;
+}
+
+/* ---- اسکرول‌بار ---- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
